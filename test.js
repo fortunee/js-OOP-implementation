@@ -1,29 +1,31 @@
 import chai from 'chai';
 const expect = chai.expect;
 
+import { Person } from './index';
+
 describe('Person', function () {
+    let newPerson;
+
+    before(function() {
+        newPerson = new Person('John Doe', 27);
+    })
+    
     it('Should have a name', function () {
-        expect(false).to.be.true;
+        expect(newPerson.name).to.equal('John Doe');
     });
 
     it('Should have an age', function () {
-        expect(false).to.be.true;
+        expect(newPerson.age).to.equal(27);
     });
 
     it('Should be able to set a name', function () {
-        expect(false).to.be.true;
+        newPerson.setName('Daniel');
+        expect(newPerson.getName()).to.equal('Daniel');
     });
 
-    it('Should be able to get a name', function () {
-        expect(false).to.be.true;
-    });
-
-    it('Should be able to set age', function () {
-        expect(false).to.be.true;
-    });
-
-    it('Should be able to get age', function () {
-        expect(false).to.be.true;
+    it('Should be able to set an age', function () {
+        newPerson.setAge(30);
+        expect(newPerson.getAge()).to.equal(30);
     });
 });
 
