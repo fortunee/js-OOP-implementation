@@ -93,6 +93,7 @@ export class Man extends Person {
     /**
      * @property {Function} setIsMarried A method to specify man's marital status.
      * @param {boolean} married 
+     * @returns {void}
      */
     setIsMarried(married) {
         this.isMarried = married;
@@ -109,6 +110,7 @@ export class Man extends Person {
     /**
      * @property {Function} setHasIncome A method to specify man's income.
      * @param {boolean} income 
+     * @returns {void}
      */
     setHasIncome(income) {
         this.hasIncome = income;
@@ -195,6 +197,7 @@ export class Wife extends Person {
     /**
      * @property {Function} setIsPregnant A method to specify woman's pregnant state.
      * @param {boolean} pregnant 
+     * @returns {void}
      */
     setIsPregnant(pregnant) {
         this.isPregnant = pregnant;
@@ -229,11 +232,18 @@ export class Wife extends Person {
     }
 }
 
+/**
+ * Class to create a baby object.
+ */
 export class Baby extends Person {
     constructor(name) {
         super(name);
     }
 
+    /**
+     * @property {Function} celebrateBirthday A method to celebrate baby's birthday
+     * @returns {void}
+     */
     celebrateBirthday() {
         this.setAge(this.age + 1);
     }
