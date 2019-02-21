@@ -86,12 +86,20 @@ describe('Man', function () {
 });
 
 describe('Wife', function() {
+    let wife;
+    before(function() {
+        wife = new Wife('Sarah Doe', 26);
+    });
+
     it('Should be able to get pregnant', function () {
-        expect(false).to.be.true;
+        wife.setIsPregnant(true)
+        expect(wife.getIsPregnant()).to.be.true;
     });
 
     it('Should be able to bear a child', function () {
-        expect(false).to.be.true;
+        const newBaby = wife.setIsDelivered(true, 'Chris Doe');
+        expect(wife.getIsDelivered()).to.be.true;
+        expect(newBaby.getName()).to.equal('Chris Doe');
     });
 });
 
