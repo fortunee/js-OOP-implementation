@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fortunee/oop-implementation/issues"
   },
-  "homepage": "https://github.com/fortunee/oop-implementation#readme"
+  "homepage": "https://github.com/fortunee/oop-implementation#readme",
+  "dependencies": {
+    "mocha": "^6.0.0"
+  }
 }
