@@ -143,7 +143,7 @@ export class Car {
     }
 
     drive(location) {
-        return `Driving to the ${location}`;
+        return `Driving to ${location}`;
     }
 
     setOwner(name) {

@@ -3,7 +3,7 @@ import sinon from 'sinon';
 
 const expect = chai.expect;
 
-import { Person, Man, Wife, Baby } from './index';
+import { Person, Man, Wife, Baby, Car } from './index';
 
 describe('Person', function () {
     let newPerson;
@@ -68,7 +68,7 @@ describe('Man', function () {
         wife.setIsDelivered(true)
         const benz = man.buyCar('benz');
         
-        expect(man.driveWifeHomeFromHospital(wife, benz)).to.equal('Driving to the Home')
+        expect(man.driveWifeHomeFromHospital(wife, benz)).to.equal('Driving to Home')
     });
 
     it('Should be able to buy his wife a car', function () {
@@ -112,15 +112,22 @@ describe('Baby', function() {
 });
 
 describe('Car', function() {
+    let car;
+
+    before(function() {
+        car = new Car('Sienna');
+        car.setOwner('Mavin')
+    });
+
     it('Should have a model', function() {
-        expect(false).to.be.true;
+        expect(car.model).to.equal('Sienna');
     });
 
     it('Should have an owner', function() {
-        expect(false).to.be.true;
+        expect(car.owner).to.equal('Mavin');
     });
 
     it('Should be driven', function() {
-        expect(false).to.be.true;
+        expect(car.drive('church')).to.equal('Driving to church');
     });
 });
