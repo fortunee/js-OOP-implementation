@@ -20,7 +20,7 @@
  * and on the baby's 15th birthday, man buys the baby a car
  */
 
-class Person {
+export class Person {
     constructor(name, age = 0) {
         this.name = name;
         this.age = age;
