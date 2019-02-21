@@ -1,0 +1,19 @@
+{
+  "name": "oop-implementation",
+  "version": "1.0.0",
+  "description": "This is a simple implementation of OOP following its concept and SOLID principles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fortunee/oop-implementation.git"
+  },
+  "author": "Fortune Ekeruo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fortunee/oop-implementation/issues"
+  },
+  "homepage": "https://github.com/fortunee/oop-implementation#readme"
+}
