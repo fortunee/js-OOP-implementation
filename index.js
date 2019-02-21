@@ -91,7 +91,7 @@ export class Man extends Person {
     }
 
     /**
-     * @property {Function} setIsMarried A method to specify the man's marital status.
+     * @property {Function} setIsMarried A method to specify man's marital status.
      * @param {boolean} married 
      */
     setIsMarried(married) {
@@ -99,7 +99,7 @@ export class Man extends Person {
     }
 
     /**
-     * @property {Function} getIsMarried A method to get the man's marital status.
+     * @property {Function} getIsMarried A method to get man's marital status.
      * @returns {boolean}
      */
     getIsMarried() {
@@ -107,7 +107,7 @@ export class Man extends Person {
     }
 
     /**
-     * @property {Function} setHasIncome A method to specify the man's income.
+     * @property {Function} setHasIncome A method to specify man's income.
      * @param {boolean} income 
      */
     setHasIncome(income) {
@@ -115,7 +115,7 @@ export class Man extends Person {
     }
 
     /**
-     * @property {Function} getHasIncome A method to get the man's income state.
+     * @property {Function} getHasIncome A method to get man's income state.
      * @returns {boolean}
      */
     getHasIncome() {
@@ -123,7 +123,7 @@ export class Man extends Person {
     }
 
     /**
-     * @property {Function} driveWifeToHospital A method to man's wife to the hospital.
+     * @property {Function} driveWifeToHospital A method to man's wife to hospital.
      * @param {object} wife
      * @param {object} car
      * @returns {object|string}
@@ -174,27 +174,56 @@ export class Man extends Person {
     }
 }
 
+/**
+ * Class to create a wife object.
+ */
 export class Wife extends Person {
     constructor(name, age) {
         super(name, age);
+
+        /**
+         * @property {boolean} isPregnant The woman's pregnant state.
+         */
         this.isPregnant = false;
+
+        /**
+         * @property {boolean} isDelivered The pregnant womans delivery state.
+         */
         this.isDelivered = false;
     }
 
+    /**
+     * @property {Function} setIsPregnant A method to specify woman's pregnant state.
+     * @param {boolean} pregnant 
+     */
     setIsPregnant(pregnant) {
         this.isPregnant = pregnant;
     }
 
+    /**
+     * @property {Function} getIsPregnant A method to get woman's pregnant state.
+     * @returns {boolean}
+     */
     getIsPregnant() {
         return this.isPregnant;
     }
 
+     /**
+     * @property {Function} setIsDelivered A method to specify pregnant woman's baby delivery state.
+     * @param {boolean} delivered
+     * @param {string} babyName
+     * @returns {object} 
+     */
     setIsDelivered(delivered, babyName = 'unchristened') {
         let newBaby = new Baby(babyName);
         this.isDelivered = delivered;
         return newBaby;
     }
 
+    /**
+     * @property {Function} getIsDelivered A method to get pregnant woman's delivery state
+     * @returns {boolean}
+     */
     getIsDelivered() {
         return this.isDelivered;
     }
