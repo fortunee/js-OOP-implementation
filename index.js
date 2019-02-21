@@ -1,8 +1,8 @@
 /**
  * Concept of OOP
- * - Abstraction
- * - Encapsulation
- * - Inheritance
+ * - Abstraction --- Check
+ * - Encapsulation --- Encapsulation
+ * - Inheritance --- Check
  * - Polymorphism
  * 
  * SOLID principles of OOP
@@ -73,7 +73,7 @@ export class Man extends Person {
             wife.setIsPregnant(false);
             return wife.setIsDelivered(true);
         }
-        return console.log('Cannot drive wife to the hospital...')
+        return  'Cannot drive wife to the hospital, please get wife pregnant';
     }
 
     driveWifeHomeFromHospital(wife, car) {
@@ -96,7 +96,7 @@ export class Man extends Person {
             return newCar;
         }
 
-        return `can't buy a car for baby cos he's below 15`;
+        return `Can't buy a car`;
     }
 }
 
