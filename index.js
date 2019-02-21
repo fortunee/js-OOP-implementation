@@ -249,16 +249,36 @@ export class Baby extends Person {
     }
 }
 
+/**
+ * Class to create a car object.
+ */
 export class Car {
     constructor(model) {
+        /**
+         * @property {string} model The car model.
+         */
         this.model = model;
+
+        /**
+         * @property {string} owner The car owner.
+         */
         this.owner = '';
     }
 
+    /**
+     * @property {Function} drive A method to drive car
+     * @param {string} location
+     * @returns {string}
+     */
     drive(location) {
         return `Driving to ${location}`;
     }
 
+    /**
+     * @property {Function} setOwner A method to set car owner
+     * @param {string} name
+     * @returns {void}
+     */
     setOwner(name) {
         this.owner = name;
     }
