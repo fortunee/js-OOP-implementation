@@ -1,7 +1,9 @@
 import chai from 'chai';
+import sinon from 'sinon';
+
 const expect = chai.expect;
 
-import { Person } from './index';
+import { Person, Man, Wife, Baby } from './index';
 
 describe('Person', function () {
     let newPerson;
@@ -30,32 +32,56 @@ describe('Person', function () {
 });
 
 describe('Man', function () {
+    let man;
+
+    before(function() {
+        man = new Man('John Doe', 27);
+    })
+
     it('Should be able to make income', function () {
-        expect(false).to.be.true;
+        man.setHasIncome(true);
+        expect(man.getHasIncome()).to.be.true;
     });
 
     it('Should be able to buy himself a car', function () {
-        expect(false).to.be.true;
+        const benz = man.buyCar('benz');
+        expect(benz.owner).to.equal(man.name);
     });
 
     it('Should be able to get married', function () {
-        expect(false).to.be.true;
+        man.setIsMarried(true);
+        expect(man.getIsMarried()).to.be.true;
     });
 
     it('Should be able to drive wife to the hospital', function () {
-        expect(false).to.be.true;
+        const wife = new Wife('Sarah Doe', 25);
+        wife.setIsPregnant(true);
+        const benz = man.buyCar('benz');
+        man.driveWifeToHospital(wife, benz);
+        expect(wife.getIsDelivered()).to.be.true;
+        expect(wife.getIsPregnant()).to.be.false;
     });
 
     it('Should be able to drive wife home from the hospital', function () {
-        expect(false).to.be.true;
+        const wife = new Wife('Sarah Doe', 25);
+        man.setIsMarried(true);
+        wife.setIsDelivered(true)
+        const benz = man.buyCar('benz');
+        
+        expect(man.driveWifeHomeFromHospital(wife, benz)).to.equal('Driving to the Home')
     });
 
     it('Should be able to buy his wife a car', function () {
-        expect(false).to.be.true;
+        const wife = new Wife('Sarah Doe', 25);
+        const wifeCar = man.buyCar('BMW', wife.name, wife.age);
+        expect(wifeCar.owner).to.equal(wife.getName());
     });
     
     it('Should be able to buy his child a car', function () {
-        expect(false).to.be.true;
+        const baby = new Baby('Duke Doe');
+        baby.setAge(15);
+        const toyota = man.buyCar('Toyota', baby.name, baby.age);
+        expect(toyota.owner).to.equal(baby.getName());
     });
 });
 

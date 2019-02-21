@@ -43,7 +43,7 @@ export class Person {
     }
 }
 
-class Man extends Person {
+export class Man extends Person {
     constructor(name, age) {
         super(name, age);
 
@@ -83,9 +83,9 @@ class Man extends Person {
             wife.isDelivered &&
             car.owner === this.name
         ) {
-            car.drive('Home');
+            return car.drive('Home');
         } else {
-            console.log('Cannot drive wife home...')
+            return 'Cannot drive wife home...'
         }
     }
 
@@ -100,7 +100,7 @@ class Man extends Person {
     }
 }
 
-class Wife extends Person {
+export class Wife extends Person {
     constructor(name, age) {
         super(name, age);
         this.isPregnant = false;
@@ -126,7 +126,7 @@ class Wife extends Person {
     }
 }
 
-class Baby extends Person {
+export class Baby extends Person {
     constructor(name) {
         super(name);
     }
@@ -136,14 +136,14 @@ class Baby extends Person {
     }
 }
 
-class Car {
+export class Car {
     constructor(model) {
         this.model = model;
         this.owner = '';
     }
 
     drive(location) {
-        console.log(`Driving to the ${location}`);
+        return `Driving to the ${location}`;
     }
 
     setOwner(name) {
