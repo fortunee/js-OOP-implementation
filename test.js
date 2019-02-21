@@ -105,7 +105,9 @@ describe('Wife', function() {
 
 describe('Baby', function() {
     it('Should be able to celebrate birthdays', function() {
-        expect(false).to.be.true;
+        const baby = new Baby('Chris Doe');
+        baby.celebrateBirthday();
+        expect(baby.getAge()).to.equal(1);
     });
 });
 
