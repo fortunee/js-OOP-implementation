@@ -66,7 +66,9 @@ describe('Man', function () {
         
         wife.setIsPregnant(true);
         expect(wife.getIsPregnant()).to.be.true;
-        man.driveWifeToHospital(wife, benz);
+        expect(wife.getIsDelivered()).to.be.false;
+        expect(man.driveWifeToHospital(wife, benz)).to.equal('Driving to Hospital');
+        wife.setIsDelivered(true)
         expect(wife.getIsDelivered()).to.be.true;
         expect(wife.getIsPregnant()).to.be.false;
     });

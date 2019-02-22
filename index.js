@@ -132,9 +132,7 @@ export class Man extends Person {
      */
     driveWifeToHospital(wife, car) {
         if (this.isMarried && wife.isPregnant && car.owner === this.name) {
-            car.drive('Hospital');
-            wife.setIsPregnant(false);
-            return wife.setIsDelivered(true);
+            return car.drive('Hospital');
         }
         return  'Cannot drive wife to the hospital, please get wife pregnant';
     }
@@ -218,9 +216,17 @@ export class Wife extends Person {
      * @returns {object} 
      */
     setIsDelivered(delivered, babyName = 'unchristened') {
-        let newBaby = new Baby(babyName);
+        // let newBaby = new Baby(babyName);
+        // this.isDelivered = delivered;
+        // return newBaby;
+        if (delivered) {
+            this.setIsPregnant(false);
+            let newBaby = new Baby(babyName);
+            this.isDelivered = delivered;
+            return newBaby;
+        }
+
         this.isDelivered = delivered;
-        return newBaby;
     }
 
     /**
