@@ -93,7 +93,7 @@ export class Man extends Person {
     /**
      * @property {Function} setIsMarried A method to specify man's marital status.
      * @param {boolean} married 
-     * @returns {void}
+     * @returns void
      */
     setIsMarried(married) {
         this.isMarried = married;
@@ -110,7 +110,7 @@ export class Man extends Person {
     /**
      * @property {Function} setHasIncome A method to specify man's income.
      * @param {boolean} income 
-     * @returns {void}
+     * @returns void
      */
     setHasIncome(income) {
         this.hasIncome = income;
@@ -134,11 +134,11 @@ export class Man extends Person {
         if (this.isMarried && wife.isPregnant && car.owner === this.name) {
             return car.drive('Hospital');
         }
-        return  'Cannot drive wife to the hospital, please get wife pregnant';
+        return 'Cannot drive wife to the hospital, please get wife pregnant';
     }
 
     /**
-     * @property {Function} driveWifeHomeFromHospital A method to man's wife home from the hospital.
+     * @property {Function} driveWifeHomeFromHospital A method to drive man's wife home from the hospital.
      * @param {object} wife
      * @param {object} car
      * @returns {string}
@@ -178,8 +178,13 @@ export class Man extends Person {
  * Class to create a wife object.
  */
 export class Wife extends Person {
-    constructor(name, age) {
+    constructor(name, firstName, age) {
         super(name, age);
+
+        /**
+         * @property {boolean} firstName The woman's firstName.
+         */
+        this.firstName = firstName;
 
         /**
          * @property {boolean} isPregnant The woman's pregnant state.
@@ -193,9 +198,18 @@ export class Wife extends Person {
     }
 
     /**
+     * @property {Function} getName A method to specify woman's firstName and name.
+     * @param {boolean} pregnant 
+     * @returns void
+     */
+    getName() {
+        return `${this.firstName} ${this.name}`; 
+    }
+
+    /**
      * @property {Function} setIsPregnant A method to specify woman's pregnant state.
      * @param {boolean} pregnant 
-     * @returns {void}
+     * @returns void
      */
     setIsPregnant(pregnant) {
         this.isPregnant = pregnant;
@@ -216,9 +230,6 @@ export class Wife extends Person {
      * @returns {object} 
      */
     setIsDelivered(delivered, babyName = 'unchristened') {
-        // let newBaby = new Baby(babyName);
-        // this.isDelivered = delivered;
-        // return newBaby;
         if (delivered) {
             this.setIsPregnant(false);
             let newBaby = new Baby(babyName);
@@ -283,7 +294,7 @@ export class Car {
     /**
      * @property {Function} setOwner A method to set car owner
      * @param {string} name
-     * @returns {void}
+     * @returns void
      */
     setOwner(name) {
         this.owner = name;

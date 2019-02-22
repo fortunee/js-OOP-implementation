@@ -82,8 +82,8 @@ describe('Man', function () {
     });
 
     it('Should be able to buy his wife a car', function () {
-        const wife = new Wife('Jane Doe', 25);
-        const wifeCar = man.buyCar('BMW', wife.name, wife.age);
+        const wife = new Wife('Doe', 'Jane', 25);
+        const wifeCar = man.buyCar('BMW', wife.getName(), wife.getAge());
         expect(wifeCar.owner).to.equal(wife.getName());
     });
     
