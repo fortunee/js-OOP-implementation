@@ -1,0 +1,31 @@
+{
+  "name": "oop-implementation",
+  "version": "1.0.0",
+  "description": "This is a simple implementation of OOP following its concept and SOLID principles",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js --require @babel/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fortunee/oop-implementation.git"
+  },
+  "author": "Fortune Ekeruo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fortunee/oop-implementation/issues"
+  },
+  "homepage": "https://github.com/fortunee/oop-implementation#readme",
+  "dependencies": {
+    "mocha": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "sinon": "^7.2.4"
+  }
+}
