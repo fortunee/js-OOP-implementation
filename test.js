@@ -76,7 +76,7 @@ describe('Man', function () {
     it('Should be able to drive NOT pregnant wife home from the hospital', function () {
         const wife = new Wife('Jane Doe', 25);
         man.setIsMarried(true);
-        wife.setIsDelivered(true)
+        wife.setIsDelivered(true);
         const benz = man.buyCar('benz');
         expect(man.driveWifeHomeFromHospital(wife, benz)).to.equal('Driving to Home')
     });

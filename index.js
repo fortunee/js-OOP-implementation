@@ -166,7 +166,7 @@ export class Man extends Person {
     buyCar(model, owner = this.name, ownerAge = this.age) {
         if (this.hasIncome && ownerAge >= 15) {
             let newCar = new Car(model);
-            newCar.setOwner(owner)
+            newCar.setOwner(owner);
             return newCar;
         }
 
@@ -279,7 +279,7 @@ export class Car {
         /**
          * @property {string} owner The car owner.
          */
-        this.owner = '';
+        this.owner = ''; // improve owner to be an instance of a person
     }
 
     /**
